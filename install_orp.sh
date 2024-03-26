@@ -35,13 +35,13 @@ rpi_board="$(cat /proc/cpuinfo | grep -i Revision)"
 ############################
 # ORP Version Displayed on Login Page
 ############################
-ORP_VERSION="3.0.x (Dev)"
+ORP_VERSION="3.0.99 (Dev)"
 
 ############################
 # ORP Gui Install Version (New)
 # What version to pull from git
 ############################
-ORP_GUI_VERSION="3.0.x-DEV"
+ORP_GUI_VERSION="3.0.99-DEV"
 
 ############################
 # set build / install log dir (New)
@@ -113,7 +113,7 @@ otg_gcdc_enable=no
 # Used for wifi hotspot setup/configuration at install
 # Default = US
 ############################
-WIFI_DOMAIN="US"
+WIFI_DOMAIN="GB"
 
 ################################################################################
 # DEFINABLE VARIABLES EDIT (stop)

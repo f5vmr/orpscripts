@@ -184,28 +184,28 @@ function install_svxlink_sounds {
 	#####################################################################
 
 	cd "$wrk_dir"
-	wget https://github.com/OpenRepeater/orp-sounds/archive/2019.zip
-	unzip 2019.zip
+	wget https://g4nab.co.uk/wp-content/uploads/2023/08/en_GB.tar_.gz
+	tar -zxvf en_GB.tar_.gz
 	mkdir -p "$SVXLINK_SOUNDS_DIR"
-	mv orp-sounds-2019/en_US "$SVXLINK_SOUNDS_DIR"
-	rm -R orp-sounds-2019
-	rm 2019.zip
+	mv en_GB "$SVXLINK_SOUNDS_DIR"
+	rm -R en_GB.tar_.gz
 	
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/0.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_0.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/1.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_1.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/2.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_2.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/3.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_3.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/4.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_4.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/5.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_5.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/6.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_6.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/7.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_7.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/8.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_8.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/9.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/phonetic_9.wav"	
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/O.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/oX.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/MetarInfo/hours.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/hours.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/MetarInfo/hour.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/hour.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/Hz.wav" "$SVXLINK_SOUNDS_DIR/en_US/Core/hz.wav"
-	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Core/repeater.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/repeater.wav"
+	
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/0.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_0.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/1.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_1.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/2.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_2.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/3.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_3.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/4.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_4.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/5.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_5.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/6.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_6.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/7.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_7.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/8.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_8.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/9.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/phonetic_9.wav"	
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/O.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/oX.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/MetarInfo/hours.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/hours.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/MetarInfo/hour.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/hour.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Default/Hz.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Core/hz.wav"
+	ln -s "$SVXLINK_SOUNDS_DIR/en_GB/Core/repeater.wav" "$SVXLINK_SOUNDS_DIR/en_GB/Default/repeater.wav"
 	
 	echo "Completed"
 }

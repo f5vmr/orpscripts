@@ -1,3 +1,6 @@
+CHris Jackson (G4NAB)
+1) Changing scripts for British English
+
 Rich Neese (N4CNR) 
 
 OpenRepeater Install Script Changes.
