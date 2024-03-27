@@ -1,5 +1,5 @@
-Developer OpenRepeater Build Script Debian (11) Bullseye
-=======
+Developer OpenRepeater Build Script Debian (12) Bookworm
+======
 *This is the repository for the install/build script for the OpenRepeater project. With this script you can install OpenRepeater on your system 
  or use it to build a complete system to image for download by others. The script will install the OpenRepeater UI, SVXLink, and other packages 
  and dependancies required by OpenRepeater. It will also make some other system adjustments as well.
@@ -14,7 +14,7 @@ Developer OpenRepeater Build Script Debian (11) Bullseye
 * Make sure that you device is connected to the internet as it will need to download files and packages to install.
 * ***It is suggested you should set a STATIC ip address*** for your device to prevent the IP changing during/after build. 
     The simplest way to do this is in your router. Map and IP address to the MAC address of the ethernet adapter. 
-* It's **HIGHLY RECOMMNED NOT TO BUILD OVER WIFI**. If your device does not have onboard ethernet, it is advised 
+* It's **HIGHLY RECOMMENDED NOT TO BUILD OVER WIFI**. If your device does not have onboard ethernet, it is advised 
     to use a USB to ethernet adapter during the build process where possible.
 * Developers and Users should have a basic working knowledge of Linux. This guide/script is not intended for beginners.
 
@@ -62,7 +62,7 @@ These instructions are for doing a complete build on a headless (without a keybo
 8. Download the scripts 1 of 2 ways:
 	* **git:**
 		* First **`apt install git`**, Not installed on os image by default.
-		* &#35; **`git clone -b X.x.x https://github.com/OpenRepeater/scripts.git /usr/src/scripts X=2/3 x=x/0/1/2/3`**
+		* &#35; **`git clone -b 3.0.x-Dev https://github.com/OpenRepeater/scripts.git /usr/src/scripts`**
 	* **wget:** 
 		* &#35; **`cd /usr/src && wget https://github.com/OpenRepeater/scripts/archive/3.0.x-DEV.zip X=2/3 x=x/0/1/2/3`**
 9. Unzip the script archive if you got the zip file.
