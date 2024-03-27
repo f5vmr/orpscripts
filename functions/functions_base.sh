@@ -143,8 +143,8 @@ function set_wifi_domain {
     echo "--------------------------------------------------------------"
     echo " Adding Wifi Regional Domain "
     echo "--------------------------------------------------------------"
-	sed -i /etc/default/crda -e"s/=/=$WIFI_DOMAIN/g"
-	iw reg set $WIFI_DOMAIN
+	#sed -i /etc/default/crda -e"s/=/=$WIFI_DOMAIN/g"
+    iw reg set $WIFI_DOMAIN
 	raspi-config nonint do_wifi_country $WIFI_DOMAIN
 	echo "Completed"
 }
