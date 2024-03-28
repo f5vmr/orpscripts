@@ -29,6 +29,7 @@ echo "RPI_config_text_path is: $RPI_config_text_path"
 #Get rpi-board id (New)
 ############################
 rpi_board="$(cat /proc/cpuinfo | grep -i Revision)"
+exit
 
 ################################################################################
 # DEFINABLE VARIABLES EDIT (start)
