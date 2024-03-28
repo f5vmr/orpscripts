@@ -24,6 +24,7 @@ if ["$REQUIRED_OS_VER" -ge "12"]; then
 else
     RPI_config_text_path = '/boot/config.txt'
 fi
+echo "RPI_config_text_path is: $RPI_config_text_path"
 ############################
 #Get rpi-board id (New)
 ############################
