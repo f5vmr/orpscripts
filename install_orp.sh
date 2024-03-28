@@ -7,7 +7,7 @@
 ############################
 # Set Debian OS Release
 ############################
-REQUIRED_OS_VER="12"
+REQUIRED_OS_VER=12
 REQUIRED_OS_NAME="BookWorm"
 
 ############################
