@@ -7,7 +7,7 @@
 ############################
 # Set Debian OS Release
 ############################
-REQUIRED_OS_VER="12"
+REQUIRED_OS_VER=12
 REQUIRED_OS_NAME="BookWorm"
 
 ############################
@@ -19,7 +19,7 @@ system_arch="$(dpkg --print-architecture)"
 ############################
 # Set config.txt path
 ############################
-if ["$REQUIRED_OS_VER" -ge "12"]; then
+if ["$REQUIRED_OS_VER" -ge 12]; then
     RPI_config_text_path = '/boot/firmware/config.txt'
 else
     RPI_config_text_path = '/boot/config.txt'
