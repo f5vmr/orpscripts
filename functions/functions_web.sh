@@ -10,7 +10,7 @@ function install_webserver {
     apt-get install --assume-yes --fix-missing nginx memcached ssl-cert \
         php8.2-common php8.2-fpm php8.2-curl php8.2-dev php8.2-gd php-imagick \
         php-memcached php8.2-pspell php8.2-snmp php8.2-sqlite3 php8.2-xmlrpc \
-        php8.2-xml php-pear php-ssh2 php8.2-cli php8.2-zip sqlite3
+        php8.2-xml php8.2-mbstring php-pear php-ssh2 php8.2-cli php8.2-zip sqlite3
         
      echo "Completed"
         

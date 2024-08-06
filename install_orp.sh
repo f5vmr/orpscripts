@@ -183,6 +183,11 @@ source "${BASH_SOURCE%/*}/functions/functions_web.sh"
 ########################################################
 source "${BASH_SOURCE%/*}/functions/functions_cleanup.sh"
 ########################################################
+########################################################
+# OS Patches
+########################################################
+source "${BASH_SOURCE%/*}/functions/functions_os_patches.sh"
+
 ### INITIAL FUNCTIONS ####
 check_root
 check_os
@@ -191,6 +196,8 @@ check_internet
 
 # Start Time
 START_TIME=$(date +%s)
+
+
 ################################################################################
 # USER INPUT
 ################################################################################
@@ -215,6 +222,7 @@ fi
 # MAIN SCRIPT - Run Functions and Save to Log
 ################################################################################
 (
+	fixup_dtoverlay_linking
 	########################################################
 	# grab date for build date/start build time
 	########################################################
@@ -232,7 +240,7 @@ fi
 	########################################################	
 	set_wifi_domain
 	####################################################
-	# add serial consile to allow access where no 
+	# add serial console to allow access where no 
 	# network avaible. Rpi zero/w/w2 (New)
 	####################################################
 	#otg_console

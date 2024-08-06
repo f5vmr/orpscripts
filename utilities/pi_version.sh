@@ -1,6 +1,6 @@
 #!/bin/bash
 CPU_REV=$(grep Revision /proc/cpuinfo | cut -f 2 -d: | tr -d '[:space:]')
-
+#https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/raspberry-pi/revision-codes.adoc
 case $CPU_REV in
 	900021)
 		MODEL="A+"
@@ -251,6 +251,60 @@ case $CPU_REV in
 		MFG="Sony UK"
 		DATE="Q4 2020"
 		;;
+
+    a03140)
+                MODEL="CM4"
+		REV="1.0"
+		RAM="1GB"
+		MFG="Sony UK"
+		DATE=""
+		;;
+
+    b03140)
+                MODEL="CM4"
+		REV="1.0"
+		RAM="2GB"
+		MFG="Sony UK"
+		DATE=""
+		;;
+    c03140)
+                MODEL="CM4"
+		REV="1.0"
+		RAM="4GB"
+		MFG="Sony UK"
+		DATE="Q4 2020"
+		;;
+    d03140)
+                MODEL="CM4"
+		REV="1.0"
+		RAM="8GB"
+		MFG="Sony UK"
+		DATE=""
+		;;
+
+    902120)
+                MODEL="Zero 2 W"
+		REV="1.0"
+		RAM="512MB"
+		MFG="Sony UK"
+		DATE=""
+		;;
+    
+    c04170)
+                MODEL="5"
+		REV="1.0"
+		RAM="4GB"
+		MFG="Sony UK"
+		DATE=""
+		;;
+
+    d04170)
+                MODEL="5"
+		REV="1.0"
+		RAM="8GB"
+		MFG="Sony UK"
+		DATE=""
+		;;  
 	*)
 		MODEL="Unknown"
 		;;

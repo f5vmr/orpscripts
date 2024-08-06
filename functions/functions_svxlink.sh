@@ -15,16 +15,58 @@ function install_svxlink_source () {
 
 	##################################	
 	echo "--------------------------"
-	echo " Install required packages"
+	echo " Install SVXLINK required packages"
 	echo "--------------------------"
 	##################################
 		
  	apt update && apt upgrade -y --fix-missing
-	apt install --assume-yes --fix-missing g++ cmake make libsigc++-2.0-dev \
-    libgsm1-dev libpopt-dev tcl8.6-dev libgcrypt20-dev libspeex-dev libasound2-dev \
-    libopus-dev librtlsdr-dev doxygen groff alsa-utils vorbis-tools curl git \
-    libcurl4-openssl-dev unzip zip libpigpiod-if-dev libpigpiod-if2-1 libgpiod-dev \
-    libgpiod2 pigpiod gpiod libjsoncpp-dev libjsoncpp25 libogg-dev
+	
+	args=(
+	--assume-yes 
+	--fix-missing
+    alsa-utils   			# required for configuring sound levels / card settings
+	cmake   				# required to build only
+	#doxygen 	 			# optional for developer documentation
+	g++ 					# required to build only
+	gpiod 					# should be redundant to libgpiod-dev
+	groff   				# recommended - for man pages
+	make   					# required to build only
+	libasound2-dev   		# required for alsa support
+	libcurl4-openssl-dev  	# required for builds
+	libgcrypt20-dev   		# required for cryptographic functions
+    libgsm1-dev   			# required for GSM audio codec
+	libgpiod-dev   			# required for modern GPIO support
+	libjsoncpp-dev   		# required for json file support
+	libpopt-dev        			# required - parse command line options - unavailable in bookworm
+	libogg-dev 		  		# unknown useage
+	libopus-dev	   			# unknown useage
+	librtlsdr-dev   		# optional for RTL2832U DVB-T/SDR USB dongles
+	libsigc++-2.0-dev   	# required
+	libspeex-dev   			# optional - Speex audio codec
+	#tar  					# recommended for unpacking (part of OS now)
+	#opus-tools     		# optional - for Opus sound files  (unused for ORP)
+	tcl-dev  				# required for scripting
+	#libqt          		# optional - framework for graphical applications (unused for ORP)
+	)
+	apt install  "${args[@]}"
+	
+	
+	
+	#########openrepeater residuals in cross comparisons - believed unneeded, but noted just in case
+	
+	#libgpiod2 \
+	#pigpiod \
+	#libjsoncpp25 \
+	#libpopt-dev \
+	#tcl8.6-dev \
+	#unzip \
+	#zip \
+	#libpigpiod-if-dev \
+	#libpigpiod-if2-1 \
+	#vorbis-tools \
+	#curl \
+	#git \
+	
 
 	################################################
     echo "----------------------------------------"
@@ -104,11 +146,10 @@ function install_svxlink_source () {
 	echo "-------------------------------------"
 	############################################
 	
-	#mkdir build
-
-	#cd build
-	echo "make command: cmake -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON -DUSE_QT=no $Modules_Build_Cmake_switches"
-	cmake -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON -DUSE_QT=no $Modules_Build_Cmake_switches 
+	mkdir build
+	cd build
+	echo "make command: cmake -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON -DUSE_QT=no $Modules_Build_Cmake_switches -S.. -B."
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON -DUSE_QT=no $Modules_Build_Cmake_switches -S.. -B.
 	
 	make -j5
 	make doc
@@ -206,7 +247,7 @@ function install_svxlink_sounds {
 	ln -s "$SVXLINK_SOUNDS_DIR/en_US/MetarInfo/hour.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/hour.wav"
 	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/Hz.wav" "$SVXLINK_SOUNDS_DIR/en_US/Core/hz.wav"
 	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Core/repeater.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/repeater.wav"
-	
+	ln -s "$SVXLINK_SOUNDS_DIR/en_US/Default/O.wav" "$SVXLINK_SOUNDS_DIR/en_US/Default/o.wav"
 	echo "Completed"
 }
 

@@ -57,7 +57,13 @@ These instructions are for doing a complete build on a headless (without a keybo
 6. SSH to the Pi using it's IP address. For now, log into the openrepeater via ssh using your user/password you set before flashing.
 7. &#35; **`sudo su`** and you have root.
 
-### Getting Scripts ######
+* **Temporarily patch the dtoverlay bug until it hits mainstream**
+
+**`wget https://github.com/raspberrypi/utils/archive/refs/heads/master.zip
+unzip master.zip;cd utils-master;cmake .;make;make install;
+cd ..;rm -rf utils-master;rm master.zip;`**
+
+### Getting ORP Scripts ######
 
 8. Download the scripts 1 of 2 ways:
 	* **git:**
