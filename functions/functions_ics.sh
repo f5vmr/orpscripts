@@ -94,13 +94,13 @@ function set_ics_asound {
 				ttable.1.1 1
 			}
 			#dtparam=i2s=on
-			Pcm_slave.hw_loopback {
+			pcm_slave.hw_loopback {
 				Pcm "hw: loopback, 1.2"
 				Channels 2
 				Format RAW
 				Rate 16000
 			}
-			Pcm.plug_loopback {
+			pcm.plug_loopback {
 				Type plug
 				Slave hw_loopback
 				Ttable {
